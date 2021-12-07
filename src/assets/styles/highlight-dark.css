@@ -8,10 +8,11 @@ textarea[class*="language-"] {
 	word-wrap: normal;
 	color: #eee;
 	background: #2f2f2f;
-	font-family: Roboto Mono, monospace;
 	font-size: 1em;
 	line-height: 1.5em;
-
+	font-family: 'Operator Mono', sans-serif, monospace;
+	font-weight: 400;
+	letter-spacing: 0.5em;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -99,6 +100,7 @@ pre[class*="language-"] {
 
 .token.comment {
 	color: #616161;
+	font-style: italic;
 }
 
 .token.constant {

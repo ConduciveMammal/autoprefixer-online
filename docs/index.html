@@ -17,10 +17,83 @@
     <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#e23439" />
     <link rel="shortcut icon" href="/assets/icon/favicon.ico" />
     <meta name="msapplication-config" content="/assets/icon/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#eee" media="(prefers-color-scheme: light)">
 
 
     <style>
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+      @font-face {
+    font-family: 'Operator Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-BoldItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: normal;
+    font-weight: 275;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-XLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: italic;
+    font-weight: 275;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-XLightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-LightItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: normal;
+    font-weight: 325;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-Book.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: italic;
+    font-weight: 325;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-BookItalic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: normal;
+    font-weight: 350;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'Operator Mono';
+    font-style: italic;
+    font-weight: 350;
+    src: local('Operator Mono'), url('https://fonts.cdnfonts.com/s/19229/OperatorMono-MediumItalic.woff') format('woff');
+}
+
+
       @media (prefers-color-scheme: dark) {
         :root {
           --background: #121212;
@@ -82,8 +155,7 @@
         background: var(--background);
         -webkit-box-shadow: 0 0 0 1px #ddd;
         box-shadow: 0 0 0 1px #ddd;
-        font-family: 'Fira Code', 'Operator Mono', Consolas, Monaco, 'Andale Mono',
-          monospace;
+        font-family: 'Operator Mono', Consolas, Monaco, 'Andale Mono', monospace !important;
           font-size: 14px;
           font-weight: 500;
         resize: none;
@@ -130,58 +202,64 @@
   
     <script type="module" crossorigin src="/assets/main.8530031f.js"></script>
     <link rel="modulepreload" href="/assets/vendor.17886e8c.js">
-    <link rel="stylesheet" href="/assets/main.d011f994.css">
+    <link rel="stylesheet" href="/assets/main.80c836ab.css">
   </head>
   <body>
 
-    <div class="logo_and_title">
-      <img src="/assets/logo.png" width="80" alt="" />
-      <div>
-        <h1>Autoprefixer CSS online</h1>
-        <p>Autoprefixer is a PostCSS plugin which parses your CSS and adds vendor prefixes</p>
+    <header>
+      <div class="logo_and_title">
+        <img src="/assets/logo.png" width="80" alt="" />
+        <div>
+          <h1>Autoprefixer CSS online</h1>
+          <p>Autoprefixer is a PostCSS plugin which parses your CSS and adds vendor prefixes</p>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <div class="textarea-box">
-      <p class="js-version version"></p>
-      <div class="textbox-grid">
-        <textarea autofocus class="textarea textarea-left js-input language-css" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>
+    <main>
+      <div class="textarea-box">
+        <p class="js-version version"></p>
+        <div class="textbox-grid">
+          <label for="css-editor" class="visually-hidden">CSS Code</label>
+          <textarea id="css-editor" autofocus class="textarea textarea-left js-input language-css" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>
 
-        <pre
-          class="textarea textarea-right"
-          contenteditable=""
-          autocapitalize="off" autocomplete="off" autocorrect="off"
-        ><code class="language-css js-output"><strong>Loading...</strong></code></pre>
+          <pre
+            class="textarea textarea-right"
+            autocapitalize="off" autocomplete="off" autocorrect="off"
+          ><code class="language-css js-output"><strong>Loading...</strong></code></pre>
+        </div>
       </div>
-    </div>
+    </main>
 
-    <div class="settings">
-      <div class="settings__left">
-        <form action="" class="filter js-filter">
-          <label class="filter__text">Browserslist</label>
+    <footer>
+      <div class="settings">
+        <div class="settings__left">
+          <form action="" class="filter js-filter">
+            <label class="filter__text">Browserslist</label>
 
-          <input
-            type="text"
-            class="filter__input js-browsers-filter"
-            placeholder="> 1%, last 2 versions"
-          />
-          <input type="submit" class="filter__apply button" value="Apply" />
-        </form>
+            <input
+              type="text"
+              class="filter__input js-browsers-filter"
+              placeholder="> 1%, last 2 versions"
+            />
+            <input type="submit" class="filter__apply button" value="Apply" />
+          </form>
 
-        <label class="settings__version">
-          <input type="checkbox" class="js-comment" name="" checked />
-          <span> include comment with configuration to the result </span>
-        </label>
+          <label class="settings__version">
+            <input type="checkbox" class="js-comment" name="" checked />
+            <span> include comment with configuration to the result </span>
+          </label>
+        </div>
+        <div class="settings__right">
+          <button class="button js-select" type="button">Select result</button>
+        </div>
       </div>
-      <div class="settings__right">
-        <button class="button js-select" type="button">Select result</button>
-      </div>
-    </div>
 
-    <p>
-      You can also see which browsers you choose by filter string on
-      <a class="js-link-browserlist" href="https://browserl.ist/" target="_blank">browserl.ist</a>
-    </p>
+      <p>
+        You can also see which browsers you choose by filter string on
+        <a class="js-link-browserlist" href="https://browserl.ist/" target="_blank">browserl.ist</a>
+      </p>
+    </footer>
 
     
   </body>
