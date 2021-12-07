@@ -11,8 +11,8 @@ textarea[class*="language-"] {
 	font-size: 1em;
 	line-height: 1.5em;
 	font-family: 'Operator Mono', sans-serif, monospace;
-	font-weight: 400;
-	letter-spacing: 0.5em;
+	font-weight: 325;
+	letter-spacing: 0.5;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
